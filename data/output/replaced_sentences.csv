@@ -1,0 +1,11 @@
+,original,translation,vocab,percentage_replaced,category
+0,I wonder if I am made for this world.,I preguntarse if I am made para this world.,"['preguntarse', 'i', 'para']",33.33333333333333,0
+1,I'm not inspired anymore.,I'm no inspirado anymore.,"['no', 'inspirado']",50.0,1
+2,I love lasagna.,I amar lasaña.,"['lasaña', 'i', 'amar']",100.0,2
+3,I had a stroke last year.,I tenía a stroke last year.,['tenía'],16.666666666666664,0
+4,Your attendance at classes was irregular.,Your attendance en clases era irregular.,"['era', 'en', 'clases']",50.0,1
+5,You met him at the university?,Tú fiscal a él en el ¿universidad?,"['a', 'tú', 'en', 'él', 'el', 'fiscal', 'universidad']",100.0,2
+6,I was disappointed at your absence.,I was disappointed at your ausencia.,"['i', 'ausencia']",33.33333333333333,0
+7,"Girls are more likely than boys to be malnourished, suffer poverty, face violence and be refused an education, according to a new report.","Chicas are más probable que chicos to be desnutrido, sufrir poverty, rostro violencia y ser refused un education, de acuerdo a to a nuevo informe.","['probable', 'a', 'nuevo', 'acuerdo', 'desnutrido', 'un', 'más', 'informe', 'chicas', 'que', 'chico', 'sufrir', 'violencia', 'rostro', 'y', 'ser', 'de']",65.21739130434783,1
+8,May I make so bold as to request your assistance?,Puede I make entonces bold como a pedido su ¿asistencia?,"['a', 'asistencia', 'puede', 'como', 'pedido', 'su', 'entonces']",70.0,2
+9,I have a little money.,I have a pequeño money.,['pequeño'],20.0,0

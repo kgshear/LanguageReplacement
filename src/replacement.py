@@ -1,14 +1,17 @@
 import utils
 import config
 import pandas as pd
+import asyncio
 
-def parse_sentences(df):
+
+
+async def parse_sentences(df):
     goals = utils.SentenceGoals()
     rows = []
 
     for idx, row in df.iterrows():
         original = row["sentence"]
-        translation, spanish_vocab, percent_replaced, category = utils.translate_snippet(original, goals)
+        translation, spanish_vocab, percent_replaced, category = await utils.translate_snippet(original, goals)
         rows.append([original, translation, spanish_vocab, percent_replaced, category])
 
     trans_df = pd.DataFrame(rows, columns=["original", "translation", "vocab", "percentage_replaced", "category"])
@@ -20,7 +23,8 @@ def parse_sentences(df):
     with open(config.REPLACEMENTS_PATH_CSV, "w", encoding="utf-8") as f:
         f.write(csv_string)
 
+
 if __name__ == "__main__":
     df = utils.get_dataframe()
-    df = df.sample(3000)
-    parse_sentences(df)
+    df = df.sample(10)
+    asyncio.run(parse_sentences(df))
