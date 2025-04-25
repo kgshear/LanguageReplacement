@@ -26,5 +26,6 @@ async def parse_sentences(df):
 
 if __name__ == "__main__":
     df = utils.get_dataframe()
-    df = df.sample(10)
+    df = df.dropna()
+    df = df.sample(3000)
     asyncio.run(parse_sentences(df))
