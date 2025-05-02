@@ -28,17 +28,20 @@ async def parse_qa_pairs(df):
     rows = []
 
     for idx, row in df.iterrows():
-        question, answer, spanish_vocab, percent_replaced, spanish_vocab, category = \
+        question, answer, original_question, original_answer, percent_replaced, spanish_vocab, category = \
             await utils.translate_qa_snippet(row["question"], row["answer"], goals)
-        rows.append([question, answer, spanish_vocab, percent_replaced, spanish_vocab, category])
+        rows.append([question, answer, original_question, original_answer, percent_replaced, spanish_vocab, category])
 
-    trans_df = pd.DataFrame(rows, columns=["question", "answer", "spanish_vocab", "percent_replaced",
-                                           "spanish_vocab", "category"])
+    trans_df = pd.DataFrame(rows, columns=["original_question",
+                                           "original_answer", "translated_question", "translated_answer",
+                                           "percent_replaced",
+                                           "spanish_vocab",
+                                           "category"])
     json_string = trans_df.to_json(orient="records")
     with open(config.QA_OUTPUT_PATH_JSON, "w", encoding="utf-8") as f:
         f.write(json_string)
 
-    csv_string = trans_df.to_csv()
+    csv_string = trans_df.to_csv(sep='\t')
     with open(config.QA_OUTPUT_PATH_CSV, "w", encoding="utf-8") as f:
         f.write(csv_string)
 

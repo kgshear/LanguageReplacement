@@ -12,4 +12,4 @@ REPLACEMENTS_PATH_JSON = os.path.join(OUTPUT_DIR, "replaced_sentences.json")
 REPLACEMENTS_PATH_CSV = os.path.join(OUTPUT_DIR, "replaced_sentences.csv")
 
 QA_OUTPUT_PATH_JSON = os.path.join(OUTPUT_DIR, "qa_training_data.json")
-QA_OUTPUT_PATH_CSV = os.path.join(OUTPUT_DIR, "qa_training_data.csv")
+QA_OUTPUT_PATH_CSV = os.path.join(OUTPUT_DIR, "qa_training_data.tsv")
